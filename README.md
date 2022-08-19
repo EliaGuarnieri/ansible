@@ -1,4 +1,4 @@
-# install dev environment for new computer
+# Install dev environment for new computer
 
 
 ### Install sudo and git if needed
