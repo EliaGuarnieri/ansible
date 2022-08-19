@@ -1,0 +1,21 @@
+- name: Install zsh
+  become: true
+  apt:
+    name: ["zsh"]
+  tags:
+    - install
+    - zsh
+
+- name: Change shell to zsh
+  become: true
+  shell: chsh -s $(which zsh) eliag
+  tags:
+    - install
+    - zsh
+
+- name: Install oh-my-posh
+  become: true
+  shell: wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh && chmod +x /usr/local/bin/oh-my-posh
+  tags:
+    - install
+    - zsh

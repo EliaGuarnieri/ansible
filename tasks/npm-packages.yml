@@ -1,0 +1,21 @@
+- name: Install Expo CLI
+  npm:
+    name: expo-cli
+    global: yes
+  tags:
+    - install
+    - node
+
+- name: Install eas CLI
+  npm:
+    name: eas-cli
+    global: yes
+  tags:
+    - install
+    - node
+
+- name: Login to expo account
+  shell: expo login -u eliag -p "{{ expo_pass }}"
+  tags:
+    - install
+    - node

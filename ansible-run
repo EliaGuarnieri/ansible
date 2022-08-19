@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+ansible-playbook pretask.yml --ask-vault-pass
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/id_ed25519
+ansible-playbook local.yml --ask-become-pass --ask-vault-pass
